@@ -16,6 +16,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void sceltaLettera() {
 
 		try { //inserimento lettera dall'utente
@@ -23,13 +24,13 @@ public class Tris {
 			System.out.print("\n\nCiao, benvenuto al gioco del tris\n\nGiocatore 1, come ti chiami? -> ");
 			nome1 = reader.readLine();
 			while(nome1.trim().equals("")) {
-				System.out.print("Attenzione: Ë necessario inserire un nome -> ");
+				System.out.print("Attenzione: √® necessario inserire un nome -> ");
 				nome1 = reader.readLine();
 			}
 			System.out.print("\nGiocatore 2, come ti chiami? -> ");
 			nome2 = reader.readLine();
 			while(nome2.trim().equals("")) {
-				System.out.print("Attenzione: Ë necessario inserire un nome -> ");
+				System.out.print("Attenzione: √® necessario inserire un nome -> ");
 				nome2 = reader.readLine();
 			}
 			
@@ -56,6 +57,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void gioco() {
 		System.out.println("\nIn che posizione vuoi mettere la lettera?\n");
 		System.out.println("1 | 2 | 3 ");
@@ -74,6 +76,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void casella() {
 
 		String scelta = "";
@@ -81,7 +84,7 @@ public class Tris {
 		for (; i < 10; i++) {
 
 			//ciclo per le 9 caselle della griglia
-			//se perÚ la casella Ë gi‡ occupata reinserire il numuero
+			//se per√≤ la casella √® gi√† occupata reinserire il numuero
 			try {// inserimento del numero con controllo che sia tale
 				if(!((i%2) == 0)) {
 					System.out.print("\n" + nome1 + " (" + giocatore1 + "), inserisci il numero della casella: -> ");
@@ -120,6 +123,7 @@ public class Tris {
 
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void g1(String scelta) {
 		int scelta_local = Integer.parseInt(scelta);
 		String lettera = giocatore1;
@@ -129,6 +133,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void g2(String scelta) {
 
 		int scelta_local = Integer.parseInt(scelta);
@@ -140,6 +145,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void controllo(int c, String l) {
 
 		if (l.equals("X")) {
@@ -150,7 +156,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -163,7 +169,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -176,7 +182,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -190,7 +196,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -203,7 +209,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -216,7 +222,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -229,7 +235,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -242,7 +248,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -255,7 +261,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -276,7 +282,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -289,7 +295,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -302,7 +308,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -315,7 +321,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -328,7 +334,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -341,7 +347,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -355,7 +361,7 @@ public class Tris {
 					vittoria();
 
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -368,7 +374,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -381,7 +387,7 @@ public class Tris {
 					check = true;
 					vittoria();
 				} else {
-					System.out.println("Casella gi‡ occupata");
+					System.out.println("Casella gi√† occupata");
 					check = false;
 					casella();
 
@@ -398,6 +404,7 @@ public class Tris {
 
 
 	/*------------------------------------------------------------------------*/
+	
 	public static void printGrid() {
 
 		System.out.print("\n");
@@ -532,7 +539,7 @@ public class Tris {
 				System.out.println("Gioco terminato con successo.\n");
 				for(int i = 5; i >= 0; i--) {
 					
-					System.out.print("L'app si chiuder‡ tra " + i +" secondi");
+					System.out.print("L'app si chiuder√† tra " + i +" secondi");
 
 					}
 					
