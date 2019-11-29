@@ -15,6 +15,8 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
+	
+	//Funzione che si occupa dell'inizializzazione dei giocatori
 
 	public static void sceltaLettera() {
 
