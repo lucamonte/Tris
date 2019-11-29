@@ -10,16 +10,15 @@ public class Tris {
 	static int vittorieX = 0, vittorieO = 0, pareggio = 0;
 
 	public static void main(String[] args) {
-
 		sceltaLettera();
 		gioco(); 
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
 	public static void sceltaLettera() {
 
-		try { //inserimento lettera dall'utente
+		try { //Inserimento nomi utente e lettera scelta dal primo giocatore
 			System.out.print("TRIS v. 1.3.3 ----> by BIFRIC && MONLUA");	
 			System.out.print("\n\nCiao, benvenuto al gioco del tris\n\nGiocatore 1, come ti chiami? -> ");
 			nome1 = reader.readLine();
@@ -33,7 +32,7 @@ public class Tris {
 				System.out.print("Attenzione: è necessario inserire un nome -> ");
 				nome2 = reader.readLine();
 			}
-			
+
 			System.out.print("\n" + nome1 + ", che lettera vuoi fare? (X/O) -> ");
 			giocatore1 = reader.readLine().toUpperCase();	
 			while (!((giocatore1.equals("X")) || (giocatore1.equals("O")))) {
@@ -44,7 +43,7 @@ public class Tris {
 			System.out.println("Errore durante l'inserimento della lettera" + e.getMessage());
 		}
 
-		//altro giocatore umano
+		//Assegnazione dei giocatori
 		if (giocatore1.equals("X")) {
 			giocatore2 = "O";
 
@@ -57,7 +56,9 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che si occupa della richiesta della posizione desiserata da occupare
+
 	public static void gioco() {
 		System.out.println("\nIn che posizione vuoi mettere la lettera?\n");
 		System.out.println("1 | 2 | 3 ");
@@ -76,16 +77,15 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che si occupa di occupare le caselle e verificare che i numeri inseriti dagli utenti siano validi
+
 	public static void casella() {
 
 		String scelta = "";
 
 		for (; i < 10; i++) {
-
-			//ciclo per le 9 caselle della griglia
-			//se però la casella è già occupata reinserire il numuero
-			try {// inserimento del numero con controllo che sia tale
+			try {//Verifica che il numero inserito sia valido
 				if(!((i%2) == 0)) {
 					System.out.print("\n" + nome1 + " (" + giocatore1 + "), inserisci il numero della casella: -> ");
 				} else if ((i%2) == 0) {
@@ -116,15 +116,12 @@ public class Tris {
 		}
 	}
 
-	//stampa della griglia
-
-
-
-
-
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che gestisce le scelte del giocatore 1
+
 	public static void g1(String scelta) {
+
 		int scelta_local = Integer.parseInt(scelta);
 		String lettera = giocatore1;
 
@@ -133,7 +130,9 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che gestisce le scelte del giocatore 2
+
 	public static void g2(String scelta) {
 
 		int scelta_local = Integer.parseInt(scelta);
@@ -141,11 +140,12 @@ public class Tris {
 
 		controllo(scelta_local, lettera);
 
-
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che controlla che le caselle non siano già assegnate
+
 	public static void controllo(int c, String l) {
 
 		if (l.equals("X")) {
@@ -285,7 +285,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -298,7 +297,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -311,7 +309,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -324,7 +321,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -337,7 +333,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -350,7 +345,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -364,7 +358,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -377,7 +370,6 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
@@ -390,21 +382,18 @@ public class Tris {
 					System.out.println("Casella già occupata");
 					check = false;
 					casella();
-
 				}
 
 				break;
-
 			}
-
 		}
 		printGrid();
 	}
 
-
-
 	/*------------------------------------------------------------------------*/
-	
+
+	//Funzione che si occupa della stampa a schermo della griglia di gioco
+
 	public static void printGrid() {
 
 		System.out.print("\n");
@@ -412,28 +401,27 @@ public class Tris {
 		for (int c = 0; c < 3; c++) {
 			for (int r = 0; r < 3; r++) {
 				System.out.print(griglia[c][r]);
-
-
-
 			}
 			System.out.print("\n");
 		}
-
 	}
+
+	/*------------------------------------------------------------------------*/
+
+	//Funzione che verifica se un giocatore ha vinto oppure si è verificato un pareggio
 
 	public static void vittoria() {
 
-
 		for(int j=0;j<3;j++) {
 
-			if((griglia[j][0].equals(" X "))&&(griglia[j][1].equals(" X "))&&(griglia[j][2].equals(" X "))) {
+			if((griglia[j][0].equals(" X ")) && (griglia[j][1].equals(" X ")) && (griglia[j][2].equals(" X "))) {
 				System.out.println("Ha vinto "+nome1+" sulla riga: " + j+1);
 				vittorieX=vittorieX+1;
 				printGrid();
 				richiestaGioco();
 
 			}
-			if((griglia[j][0].equals(" O "))&&(griglia[j][1].equals(" O "))&&(griglia[j][2].equals(" O "))) {
+			if((griglia[j][0].equals(" O ")) && (griglia[j][1].equals(" O ")) && (griglia[j][2].equals(" O "))) {
 				System.out.println("Ha vinto "+nome2+" sulla riga: " + j+1);
 				vittorieO=vittorieO+1;
 				printGrid();
@@ -443,20 +431,18 @@ public class Tris {
 
 		for(int k=0;k<3;k++) {
 
-			if((griglia[0][k].equals(" X "))&&(griglia[1][k].equals(" X "))&&(griglia[2][k].equals(" X "))) {
+			if((griglia[0][k].equals(" X ")) && (griglia[1][k].equals(" X ")) && (griglia[2][k].equals(" X "))) {
 				System.out.println("Ha vinto "+nome1+" sulla riga: " + k+1);
 				vittorieX=vittorieX+1;
 				printGrid();
 				richiestaGioco();
-
-
 			}
-			if((griglia[0][k].equals(" O "))&&(griglia[1][k].equals(" O "))&&(griglia[2][k].equals(" O "))) {
+
+			if((griglia[0][k].equals(" O ")) && (griglia[1][k].equals(" O ")) && (griglia[2][k].equals(" O "))) {
 				System.out.println("Ha vinto "+nome2+" sulla riga: " + k+1);
 				vittorieO=vittorieO+1;
 				printGrid();
 				richiestaGioco();
-
 			}
 
 
@@ -466,8 +452,8 @@ public class Tris {
 				vittorieX=vittorieX+1;
 				printGrid();
 				richiestaGioco();
-
 			}
+
 			if((griglia[0][0].equals(" O "))&&(griglia[1][1].equals(" O "))&&(griglia[2][2].equals(" O "))) {
 				System.out.println("Ha vinto "+nome2);
 				vittorieO=vittorieO+1;
@@ -480,9 +466,9 @@ public class Tris {
 				vittorieX=vittorieX+1;
 				printGrid();
 				richiestaGioco();
-
 			}
-			if((griglia[0][2].equals(" O "))&&(griglia[1][1].equals(" O "))&&(griglia[2][0].equals(" O "))) {
+
+			if((griglia[0][2].equals(" O ")) && (griglia[1][1].equals(" O ")) && (griglia[2][0].equals(" O "))) {
 				System.out.println("Ha vinto "+nome2);
 				vittorieO = vittorieO + 1;
 				printGrid();
@@ -495,14 +481,12 @@ public class Tris {
 				printGrid();
 				richiestaGioco();
 			}
-
-
-
-
 		}
-
 	}
 
+	/*------------------------------------------------------------------------*/
+
+	//Funzione che si occupa di visualizzare i risultati alla fine di ogni partita
 
 	public static void stampaRisultato() {
 
@@ -511,16 +495,19 @@ public class Tris {
 		System.out.println("\n Pareggi: " + pareggio);
 	}
 
+	/*------------------------------------------------------------------------*/
+
+	//Funzione che richiede agli utenti se vogliono giocare di nuovo
 
 	public static void richiestaGioco() {
 		String richiesta = "", tmp = "";
-	
+
 		stampaRisultato();
 
 		try {
 			System.out.print("\n\nVuoi fare un altra partita? (S/N) -> ");
 			richiesta = reader.readLine().toLowerCase();
-			while(!(richiesta.equals("s"))&&!(richiesta.equals("n")))
+			while(!(richiesta.equals("s")) && !(richiesta.equals("n")))
 			{
 				System.out.print("\nErrore inserimento scelta, prego riprovare: (S/N) -> ");
 				richiesta = reader.readLine().toLowerCase();
@@ -538,19 +525,18 @@ public class Tris {
 			} else if(richiesta.equals("n")) {
 				System.out.println("Gioco terminato con successo.\n");
 				for(int i = 5; i >= 0; i--) {
-					
+
 					System.out.print("L'app si chiuderà tra " + i +" secondi");
 
-					}
-					
-					Thread.sleep(1000);
-				if(i == 0) System.out.println("App chiusa.");
 				}
-				System.exit(0);
-			
+
+				Thread.sleep(1000);
+				if(i == 0) System.out.println("App chiusa.");
+			}
+			System.exit(0);
+
 		} catch(Exception e) {
 			System.out.println("Errore: " + e.getMessage());
 		}
 	}
-
 }
