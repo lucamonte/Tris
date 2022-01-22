@@ -539,7 +539,6 @@ public class Tris {
 
 		} catch(Exception e) {
 			System.out.println("Errore: " + e.getMessage());
-			//Aggiungo questo commento
 		}
 	}
 }
