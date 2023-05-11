@@ -15,7 +15,7 @@ public class Tris {
 	}
 
 	/*------------------------------------------------------------------------*/
-	
+
 	//Funzione che si occupa dell'inizializzazione dei giocatori
 
 	public static void sceltaLettera() {
@@ -530,10 +530,9 @@ public class Tris {
 
 					System.out.print("L'app si chiuderà tra " + i +" secondi");
 
+					Thread.sleep(1000);
+					if(i == 0) System.out.println("App chiusa.");
 				}
-
-				Thread.sleep(1000);
-				if(i == 0) System.out.println("App chiusa.");
 			}
 			System.exit(0);
 
