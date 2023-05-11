@@ -1,3 +1,4 @@
+package tris;
 import java.io.*;
 
 public class Tris {
@@ -526,9 +527,9 @@ public class Tris {
 				gioco();
 			} else if(richiesta.equals("n")) {
 				System.out.println("Gioco terminato con successo.\n");
-				for(int i = 5; i >= 0; i--) {
+				for(int i = 4; i >= 0; i--) {
 
-					System.out.print("L'app si chiuderà tra " + i +" secondi");
+					System.out.println("L'app si chiuderà tra " + (i + 1) +" secondi");
 
 					Thread.sleep(1000);
 					if(i == 0) System.out.println("App chiusa.");
